@@ -17,6 +17,9 @@ class ExampleTest extends TestCase
         $response
             ->assertOk()
             ->assertSee('A little more balance is')
-            ->assertSee('/images/logo.jpeg');
+            ->assertSee('/images/logo.png')
+            ->assertSee('/favicon.ico')
+            ->assertSee('/favicon.svg')
+            ->assertSee('/site.webmanifest');
     }
 }

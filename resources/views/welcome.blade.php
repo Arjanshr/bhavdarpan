@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#f5f3eb">
         <meta name="description" content="Bhavdarpan is a new space for reflection, acknowledgement, and healing. Coming soon.">
+        <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+        <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
+        <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png" sizes="512x512">
+        <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+        <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
         <title>Bhavdarpan — Coming soon</title>
 
@@ -349,7 +354,7 @@
         <div class="page">
             <header class="topbar">
                 <a class="brand" href="{{ url('/') }}" aria-label="Bhavdarpan home">
-                    <img src="{{ asset('images/logo.jpeg') }}" alt="Bhavdarpan — Reflect. Acknowledge. Heal.">
+                    <img src="{{ asset('images/logo.png') }}" alt="Bhavdarpan — Reflect. Acknowledge. Heal.">
                     <span class="brand-name">Bhavdarpan</span>
                 </a>
                 <span class="top-note"><span class="status-dot" aria-hidden="true"></span>Something thoughtful is taking shape</span>
@@ -365,7 +370,7 @@
 
                 <div class="artwork" aria-label="Bhavdarpan brand artwork">
                     <div class="logo-card">
-                        <img src="{{ asset('images/logo.jpeg') }}" alt="Bhavdarpan logo with the words Reflect. Acknowledge. Heal.">
+                        <img src="{{ asset('images/logo.png') }}" alt="Bhavdarpan logo with the words Reflect. Acknowledge. Heal.">
                     </div>
                 </div>
             </main>
