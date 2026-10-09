@@ -1,4 +1,8 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # Block sensitive files and directories before rewriting to public/
+    RewriteRule ^(?:error_log|\.env(?:\..*)?|\.git(?:/|$)) - [F,L,NC]
+
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
