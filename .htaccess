@@ -1,16 +1,4 @@
-Options -Indexes -MultiViews
-
 <IfModule mod_rewrite.c>
     RewriteEngine On
-
-    # Keep environment files and other hidden files out of public access.
-    RewriteRule (^|/)\.(?!well-known(?:/|$)) - [F,L]
-
-    # Do not allow visitors to use the internal public/ path directly.
-    RewriteCond %{THE_REQUEST} \s/+public(?:/|\?|\s) [NC]
-    RewriteRule ^public(?:/|$) - [F,L]
-
-    # Let internally forwarded requests reach Laravel's public/.htaccess.
-    RewriteRule ^public(?:/|$) - [L]
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
