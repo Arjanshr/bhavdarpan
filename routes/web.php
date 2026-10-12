@@ -11,8 +11,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Middleware\EnsureAdmin;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', HomeController::class)->name('home');
-Route::get('/home', HomeController::class)->name('home');
+Route::get('/', HomeController::class)->name('home');
+Route::redirect('/home', '/')->name('home.legacy');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->middleware('throttle:5,1')->name('contact.store');
 

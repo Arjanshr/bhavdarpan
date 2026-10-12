@@ -964,7 +964,6 @@
                         <h2 id="closing-title">{{ $content['closing_title'] }}</h2>
                         <p>{{ $content['closing_description'] }}</p>
                     </div>
-                    <a class="button" href="{{ route('coming-soon') }}">Visit our coming-soon page <span aria-hidden="true">→</span></a>
                 </div>
             </section>
         </main>
