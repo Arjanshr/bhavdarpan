@@ -124,6 +124,19 @@
                 font-weight: 600;
             }
 
+            .nav-links .nav-contact {
+                padding: 12px 17px;
+                border-radius: 999px;
+                background: var(--green);
+                color: white;
+                font-weight: 600;
+            }
+
+            .nav-links .nav-contact:hover {
+                background: var(--green-dark);
+                color: white;
+            }
+
             .hero {
                 position: relative;
                 display: grid;
@@ -339,11 +352,29 @@
 
             .section-intro > p:last-child,
             .about-copy > p,
-            .support-copy > p {
+            .section-intro > div,
+            .about-copy > div,
+            .support-heading > div,
+            .support-heading > p,
+            .value-card > div,
+            .support-card > div > div {
                 margin-bottom: 0;
                 color: var(--muted);
                 font-size: 15px;
                 line-height: 1.9;
+            }
+
+            .hero-copy p,
+            .section-intro > div p,
+            .about-copy > div p,
+            .support-heading > div p,
+            .value-card > div p,
+            .support-card > div > div p {
+                margin: 0;
+            }
+
+            .about-copy > div + div {
+                margin-top: 16px;
             }
 
             .values {
@@ -480,7 +511,8 @@
                 margin-bottom: 0;
             }
 
-            .support-heading > p {
+            .support-heading > p,
+            .support-heading > div {
                 max-width: 300px;
                 margin: 0 0 4px;
                 color: var(--muted);
@@ -607,7 +639,7 @@
                     gap: 18px;
                 }
 
-                .nav-links > a:not(.nav-cta) {
+                .nav-links > a:not(.nav-cta):not(.nav-contact) {
                     display: none;
                 }
 
@@ -660,6 +692,14 @@
 
                 .brand img {
                     width: 145px;
+                }
+
+                .nav-links > a:not(.nav-contact) {
+                    display: none;
+                }
+
+                .nav-links {
+                    gap: 0;
                 }
 
                 .nav-links .nav-cta {
@@ -747,7 +787,8 @@
                     display: block;
                 }
 
-                .support-heading > p {
+                .support-heading > p,
+                .support-heading > div {
                     margin-top: 18px;
                 }
 
@@ -820,18 +861,20 @@
                 <a href="#about">About us</a>
                 <a href="#approach">Our approach</a>
                 <a class="nav-cta" href="#support">Ways to connect <span aria-hidden="true">↗</span></a>
+                <a class="nav-contact" href="{{ route('contact') }}">Contact us</a>
             </nav>
         </header>
 
         <main id="main-content">
             <section class="hero shell" aria-labelledby="hero-title">
                 <div>
-                    <p class="eyebrow">Compassionate mental health support across Nepal</p>
-                    <h1 id="hero-title">A gentler space to find your <em>way forward.</em></h1>
-                    <p class="hero-copy">Understanding how you feel is a meaningful first step. Find a safe, respectful space to reflect, be heard, and access professional support.</p>
+                    <p class="eyebrow">{{ $content['hero_eyebrow'] }}</p>
+                    <h1 id="hero-title">{{ $content['hero_title'] }}</h1>
+                    <div class="hero-copy">{!! $content['hero_description'] !!}</div>
                     <div class="hero-actions">
                         <a class="button button-primary" href="#approach">Explore our approach <span aria-hidden="true">→</span></a>
                         <a class="button button-secondary" href="#support">Ways to connect</a>
+                        <a class="button button-secondary" href="{{ route('contact') }}">Contact us</a>
                     </div>
                 </div>
                 <div class="hero-art" aria-label="Bhavdarpan brand artwork">
@@ -844,25 +887,25 @@
 
             <section class="section shell" id="approach" aria-labelledby="approach-title">
                 <div class="section-intro">
-                    <p class="eyebrow">Care that sees the whole person</p>
-                    <h2 id="approach-title">Support for more than just the hard days.</h2>
-                    <p>Mental health care can help us meet challenges, understand ourselves, and grow. We believe support should be accessible, compassionate, and available before a difficult moment becomes a crisis.</p>
+                    <p class="eyebrow">{{ $content['approach_eyebrow'] }}</p>
+                    <h2 id="approach-title">{{ $content['approach_title'] }}</h2>
+                    <div>{!! $content['approach_description'] !!}</div>
                 </div>
                 <div class="values">
                     <article class="value-card">
                         <span class="card-index" aria-hidden="true">01</span>
-                        <h3>A space to be heard</h3>
-                        <p>Compassionate, confidential support in a safe, respectful, and non-judgmental environment.</p>
+                        <h3>{{ $content['value_1_title'] }}</h3>
+                        <div>{!! $content['value_1_description'] !!}</div>
                     </article>
                     <article class="value-card">
                         <span class="card-index" aria-hidden="true">02</span>
-                        <h3>Support that meets you</h3>
-                        <p>Professional counseling offered through physical and virtual platforms for people across Nepal.</p>
+                        <h3>{{ $content['value_2_title'] }}</h3>
+                        <div>{!! $content['value_2_description'] !!}</div>
                     </article>
                     <article class="value-card">
                         <span class="card-index" aria-hidden="true">03</span>
-                        <h3>Room to grow</h3>
-                        <p>Care that values early support, prevention, emotional well-being, and personal growth.</p>
+                        <h3>{{ $content['value_3_title'] }}</h3>
+                        <div>{!! $content['value_3_description'] !!}</div>
                     </article>
                 </div>
             </section>
@@ -877,10 +920,10 @@
                         </div>
                     </div>
                     <div class="about-copy">
-                        <p class="eyebrow">About Bhavdarpan</p>
-                        <h2 id="about-title">A little more understanding can change how we move forward.</h2>
-                        <p>Bhavdarpan is a mental health service organization dedicated to compassionate, confidential, and accessible support across Nepal. Our name reflects the belief that understanding our emotions and accepting our experiences can help us find a path toward healing.</p>
-                        <p>When access is limited and stigma makes it harder to ask for help, reaching out can feel like a big step. We want to make professional counseling available to people from diverse backgrounds, both in person and virtually.</p>
+                        <p class="eyebrow">{{ $content['about_eyebrow'] }}</p>
+                        <h2 id="about-title">{{ $content['about_title'] }}</h2>
+                        <div>{!! $content['about_paragraph_one'] !!}</div>
+                        <div>{!! $content['about_paragraph_two'] !!}</div>
                     </div>
                 </div>
             </section>
@@ -888,10 +931,10 @@
             <section class="section support-section shell" id="support" aria-labelledby="support-title">
                 <div class="support-heading">
                     <div class="section-intro">
-                        <p class="eyebrow">A more accessible way to seek support</p>
-                        <h2 id="support-title">Care that can meet you where you are.</h2>
+                        <p class="eyebrow">{{ $content['support_eyebrow'] }}</p>
+                        <h2 id="support-title">{{ $content['support_title'] }}</h2>
                     </div>
-                    <p>Different people need different ways to connect. Bhavdarpan offers counseling through both physical and virtual platforms.</p>
+                    <div>{!! $content['support_description'] !!}</div>
                 </div>
                 <div class="support-cards">
                     <article class="support-card">
@@ -899,8 +942,8 @@
                             <svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11M8 20v-6h8v6M2.5 20h19" /></svg>
                         </span>
                         <div>
-                            <h3>In-person counseling</h3>
-                            <p>A face-to-face option for professional support in a safe and respectful environment.</p>
+                            <h3>{{ $content['in_person_title'] }}</h3>
+                            <div>{!! $content['in_person_description'] !!}</div>
                         </div>
                     </article>
                     <article class="support-card">
@@ -908,8 +951,8 @@
                             <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="13" rx="2" /><path d="M8 22h8M12 18v4M8 11h.01M12 11h.01M16 11h.01" /></svg>
                         </span>
                         <div>
-                            <h3>Virtual counseling</h3>
-                            <p>A way to access professional support remotely, wherever you are in Nepal.</p>
+                            <h3>{{ $content['virtual_title'] }}</h3>
+                            <div>{!! $content['virtual_description'] !!}</div>
                         </div>
                     </article>
                 </div>
@@ -918,8 +961,8 @@
             <section class="closing" aria-labelledby="closing-title">
                 <div class="closing-inner shell">
                     <div>
-                        <h2 id="closing-title">Your experience deserves care, not judgment.</h2>
-                        <p>Reflect. Acknowledge. Heal. One step at a time.</p>
+                        <h2 id="closing-title">{{ $content['closing_title'] }}</h2>
+                        <p>{{ $content['closing_description'] }}</p>
                     </div>
                     <a class="button" href="{{ route('coming-soon') }}">Visit our coming-soon page <span aria-hidden="true">→</span></a>
                 </div>
@@ -932,6 +975,7 @@
                 <span>Bhavdarpan</span>
             </a>
             <p>Reflect. Acknowledge. Heal.</p>
+            <a href="{{ route('contact') }}">Contact us</a>
             <a href="#main-content">Back to top ↑</a>
         </footer>
     </body>

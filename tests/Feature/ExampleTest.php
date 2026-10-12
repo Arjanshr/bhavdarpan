@@ -2,11 +2,13 @@
 
 namespace Tests\Feature;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
+    use RefreshDatabase;
+
     /**
      * A basic test example.
      */
@@ -19,6 +21,7 @@ class ExampleTest extends TestCase
             ->assertSee('A little more balance is')
             ->assertSee('/images/logo.png')
             ->assertSee(route('home'), false)
+            ->assertSee(route('contact'), false)
             ->assertSee('/favicon.ico')
             ->assertSee('/favicon.svg')
             ->assertSee('/site.webmanifest');
@@ -34,6 +37,7 @@ class ExampleTest extends TestCase
             ->assertSee('Reflect. Acknowledge. Heal.')
             ->assertSee('In-person counseling')
             ->assertSee('Virtual counseling')
+            ->assertSee(route('contact'), false)
             ->assertSee('/images/logo.png');
     }
 }

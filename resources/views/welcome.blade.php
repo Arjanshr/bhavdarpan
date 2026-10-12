@@ -363,6 +363,7 @@
                     <p class="description">We’re creating a space to pause, understand what you’re feeling, and find a gentler way forward.</p>
                     <p class="promise">Reflect. Acknowledge. Heal.</p>
                     <a class="visit-home" href="{{ route('home') }}">Discover Bhavdarpan <span aria-hidden="true">→</span></a>
+                    <a class="visit-home" href="{{ route('contact') }}">Contact us <span aria-hidden="true">→</span></a>
                 </section>
 
                 <div class="artwork" aria-label="Bhavdarpan brand artwork">
