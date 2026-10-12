@@ -43,6 +43,7 @@ class AdminUserSeederTest extends TestCase
             'email' => 'superadmin@bhavdarpan.com',
             'is_admin' => true,
         ]);
+        $this->assertDatabaseMissing('users', ['email' => 'test@example.com']);
     }
 
     public function test_superadmin_seeder_does_not_replace_an_existing_password(): void
