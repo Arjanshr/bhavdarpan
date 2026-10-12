@@ -17,6 +17,12 @@
         <p style="margin: 0 0 27px; font-size: 15px;">
             <a href="mailto:{{ $contactMessage->email }}">{{ $contactMessage->email }}</a>
         </p>
+        @if ($contactMessage->phone_number)
+            <p class="eyebrow">Contact number</p>
+            <p style="margin: 0 0 27px; font-size: 15px;">
+                <a href="tel:{{ preg_replace('/[^0-9+]/', '', $contactMessage->phone_number) }}">{{ $contactMessage->phone_number }}</a>
+            </p>
+        @endif
         <p class="eyebrow">Message</p>
         <p style="margin: 0; color: #354b3f; font-size: 15px; line-height: 1.85; white-space: pre-wrap;">{{ $contactMessage->message }}</p>
 

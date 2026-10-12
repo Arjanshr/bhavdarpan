@@ -147,6 +147,11 @@
                             @error('email') <p class="error">{{ $message }}</p> @enderror
                         </div>
                         <div class="field">
+                            <label for="phone_number">Contact number <span>(optional)</span></label>
+                            <input id="phone_number" name="phone_number" type="tel" value="{{ old('phone_number') }}" autocomplete="tel" maxlength="32">
+                            @error('phone_number') <p class="error">{{ $message }}</p> @enderror
+                        </div>
+                        <div class="field">
                             <label for="message">How can we help?</label>
                             <textarea id="message" name="message" maxlength="5000" required>{{ old('message') }}</textarea>
                             @error('message') <p class="error">{{ $message }}</p> @enderror

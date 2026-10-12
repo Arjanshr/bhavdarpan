@@ -19,6 +19,7 @@ class ContactController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:120'],
             'email' => ['required', 'email', 'max:255'],
+            'phone_number' => ['nullable', 'string', 'max:32'],
             'message' => ['required', 'string', 'max:5000'],
             'company' => ['prohibited'],
         ]);
@@ -26,6 +27,7 @@ class ContactController extends Controller
         ContactMessage::query()->create([
             'name' => $validated['name'],
             'email' => $validated['email'],
+            'phone_number' => $validated['phone_number'] ?? null,
             'message' => $validated['message'],
             'status' => ContactMessage::STATUS_NEW,
         ]);

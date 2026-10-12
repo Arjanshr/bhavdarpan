@@ -54,6 +54,20 @@ class AdminContactMessageControllerTest extends TestCase
         ]);
     }
 
+    public function test_admin_can_see_and_call_the_contact_number_on_a_message(): void
+    {
+        $admin = $this->createAdmin();
+        $message = $this->createMessage('sender@example.com', ContactMessage::STATUS_NEW);
+        $message->update(['phone_number' => '+977 9841-234567']);
+
+        $response = $this->actingAs($admin)->get(route('admin.messages.show', $message));
+
+        $response
+            ->assertOk()
+            ->assertSee('+977 9841-234567')
+            ->assertSee('tel:+9779841234567', false);
+    }
+
     public function test_admin_can_update_a_message_status_to_replied(): void
     {
         $admin = $this->createAdmin();
