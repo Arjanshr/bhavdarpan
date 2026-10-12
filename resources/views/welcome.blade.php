@@ -173,6 +173,23 @@
                 background: #a5ad99;
             }
 
+            .visit-home {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 26px;
+                color: #3e523d;
+                font-family: Arial, sans-serif;
+                font-size: 13px;
+                font-weight: 600;
+                text-decoration-color: rgb(62 82 61 / 35%);
+                text-underline-offset: 5px;
+            }
+
+            .visit-home:hover {
+                color: #788866;
+            }
+
             .artwork {
                 position: relative;
                 display: grid;
@@ -345,6 +362,7 @@
                     <h1 id="coming-soon-title">A little more balance is <span>on its way.</span></h1>
                     <p class="description">We’re creating a space to pause, understand what you’re feeling, and find a gentler way forward.</p>
                     <p class="promise">Reflect. Acknowledge. Heal.</p>
+                    <a class="visit-home" href="{{ route('home') }}">Discover Bhavdarpan <span aria-hidden="true">→</span></a>
                 </section>
 
                 <div class="artwork" aria-label="Bhavdarpan brand artwork">

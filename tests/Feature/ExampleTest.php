@@ -18,8 +18,22 @@ class ExampleTest extends TestCase
             ->assertOk()
             ->assertSee('A little more balance is')
             ->assertSee('/images/logo.png')
+            ->assertSee(route('home'), false)
             ->assertSee('/favicon.ico')
             ->assertSee('/favicon.svg')
             ->assertSee('/site.webmanifest');
+    }
+
+    public function test_the_home_page_introduces_bhavdarpans_mental_health_support(): void
+    {
+        $response = $this->get('/home');
+
+        $response
+            ->assertOk()
+            ->assertSee('Compassionate mental health support across Nepal')
+            ->assertSee('Reflect. Acknowledge. Heal.')
+            ->assertSee('In-person counseling')
+            ->assertSee('Virtual counseling')
+            ->assertSee('/images/logo.png');
     }
 }
