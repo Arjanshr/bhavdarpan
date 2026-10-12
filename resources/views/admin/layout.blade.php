@@ -51,7 +51,7 @@
                 .shell { width: min(100% - 30px, 1160px); }
                 .admin-header { min-height: 70px; flex-wrap: wrap; padding-block: 12px; }
                 .brand img { width: 122px; }
-                .admin-nav { gap: 13px; font-size: 11px; }
+                .admin-nav { flex-wrap: wrap; justify-content: flex-end; gap: 13px; font-size: 11px; }
                 .page-heading { align-items: flex-start; flex-direction: column; }
                 main { padding-block: 30px 55px; }
             }

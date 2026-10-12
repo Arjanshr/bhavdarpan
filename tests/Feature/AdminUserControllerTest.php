@@ -11,6 +11,18 @@ class AdminUserControllerTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_admin_can_open_the_add_administrator_form(): void
+    {
+        $admin = $this->createAdmin();
+
+        $response = $this->actingAs($admin)->get(route('admin.users.create'));
+
+        $response
+            ->assertOk()
+            ->assertSee('Add an administrator')
+            ->assertSee('password_confirmation', false);
+    }
+
     public function test_admin_can_create_another_admin_account(): void
     {
         $admin = $this->createAdmin();

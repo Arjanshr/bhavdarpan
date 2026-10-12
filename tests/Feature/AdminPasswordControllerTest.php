@@ -11,6 +11,18 @@ class AdminPasswordControllerTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_admin_can_open_the_password_change_form(): void
+    {
+        $admin = $this->createAdmin();
+
+        $response = $this->actingAs($admin)->get(route('admin.password.edit'));
+
+        $response
+            ->assertOk()
+            ->assertSee('Change password')
+            ->assertSee('current_password', false);
+    }
+
     public function test_admin_can_change_password_after_confirming_the_current_password(): void
     {
         $admin = $this->createAdmin();
