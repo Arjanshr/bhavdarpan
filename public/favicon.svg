@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-    <rect width="512" height="512" rx="112" fill="#f5f3eb"/>
-    <circle cx="256" cy="256" r="224" fill="#e7ebdf"/>
-    <path d="M250 158c-5-43 9-77 42-104 14 43 3 79-42 104Z" fill="#647a4d"/>
-    <path d="M265 151c24-45 60-64 111-58-24 44-62 64-111 58Z" fill="#526b40"/>
-    <path d="M257 162c12-40 34-67 67-91M263 153c28-27 61-44 100-52" fill="none" stroke="#354b31" stroke-linecap="round" stroke-width="7"/>
-    <ellipse cx="235" cy="279" rx="126" ry="163" fill="#344136"/>
-    <ellipse cx="235" cy="279" rx="108" ry="145" fill="#faf9f4"/>
-    <ellipse cx="235" cy="279" rx="91" ry="127" fill="#e8ece8"/>
-    <path d="M181 205c-27 46-32 101-14 147" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="13" opacity=".8"/>
-    <path d="M332 271v146c0 19-13 34-31 34h-8v19h94v-19h-8c-18 0-31-15-31-34V271" fill="#344136"/>
-    <path d="M348 417v19" fill="none" stroke="#788866" stroke-linecap="round" stroke-width="7" opacity=".7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bhavdarpan logo">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f4f0e6"/>
+      <stop offset="100%" stop-color="#dfe7d2"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  <circle cx="32" cy="32" r="19" fill="#55714d" opacity="0.12"/>
+  <path d="M24 16h10.2c7.6 0 12.8 4.4 12.8 11.3 0 4.1-2.1 7.2-5.3 9.1 4.1 1.7 6.8 5.4 6.8 10.1 0 8.2-6.4 13.5-15.5 13.5H24V16zm8.5 7.6v9.1h2.5c4 0 6.2-2 6.2-4.8 0-2.9-2.2-4.3-6.2-4.3h-2.5zm0 16.9v10.3h3c4.6 0 7.3-2.2 7.3-5.3 0-3.4-2.7-5-7.3-5h-3z" fill="#2d4d35"/>
+  <path d="M39.5 20.8c2.5 1.2 4.3 3.7 4.3 7 0 2.9-1.6 5.1-4 6.4 1.7-5.2 1.1-8.5-0.3-13.4z" fill="#7ca06b" opacity="0.75"/>
 </svg>

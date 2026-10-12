@@ -8,7 +8,7 @@
         <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
         <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
         <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png" sizes="512x512">
-        <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+        <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}" type="image/png">
         <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
         <title>Bhavdarpan — Coming soon</title>
@@ -60,27 +60,16 @@
             .brand {
                 display: inline-flex;
                 align-items: center;
-                gap: 13px;
                 color: inherit;
                 text-decoration: none;
             }
 
             .brand img {
                 display: block;
-                width: 88px;
-                height: 56px;
-                object-fit: cover;
+                width: 180px;
+                height: auto;
+                object-fit: contain;
                 object-position: center;
-                border-radius: 5px;
-                mix-blend-mode: multiply;
-            }
-
-            .brand-name {
-                font-family: Arial, sans-serif;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: 0.16em;
-                text-transform: uppercase;
             }
 
             .top-note,
@@ -262,16 +251,11 @@
                 }
 
                 .brand img {
-                    width: 72px;
-                    height: 46px;
-                }
-
-                .brand-name {
-                    font-size: 11px;
+                    width: 145px;
                 }
 
                 .top-note {
-                    font-size: 9px;
+                    font-size: 8px;
                     letter-spacing: 0.05em;
                 }
 
@@ -324,17 +308,13 @@
             }
 
             @media (max-width: 390px) {
-                .brand {
-                    gap: 8px;
-                }
-
                 .brand img {
-                    width: 58px;
-                    height: 38px;
+                    width: 125px;
                 }
 
                 .top-note {
-                    gap: 7px;
+                    gap: 5px;
+                    font-size: 7px;
                 }
             }
 
@@ -354,8 +334,7 @@
         <div class="page">
             <header class="topbar">
                 <a class="brand" href="{{ url('/') }}" aria-label="Bhavdarpan home">
-                    <img src="{{ asset('images/logo.png') }}" alt="Bhavdarpan — Reflect. Acknowledge. Heal.">
-                    <span class="brand-name">Bhavdarpan</span>
+                    <img src="{{ asset('images/logo.png') }}" alt="Bhavdarpan logo">
                 </a>
                 <span class="top-note"><span class="status-dot" aria-hidden="true"></span>Something thoughtful is taking shape</span>
             </header>
